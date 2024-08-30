@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="node_type">webMethods/trigger</value>
+  <value name="node_subtype">unknown</value>
+  <value name="node_nsName">wx.eventstreams.consumer:consumeTemperature</value>
+  <value name="node_pkg">WxIBMEventStreamsDemo</value>
+  <value name="node_comment">This trigger consumes device temperatures and averages them for every 10 events with the average grouped for each device.</value>
+  <value name="is_public">false</value>
+  <value name="displayName"></value>
+  <value name="favorite"></value>
+  <value name="tags"></value>
+  <value name="since"></value>
+  <value name="deprecated"></value>
+  <value name="is_visible"></value>
+  <value name="trigger_type">streaming-trigger</value>
+  <record name="trigger" javaclass="com.wm.util.Values">
+    <value name="auditOption">0</value>
+    <record name="auditSettings" javaclass="com.wm.util.Values">
+      <value name="document_data">0</value>
+      <value name="startExecution">false</value>
+      <value name="stopExecution">false</value>
+      <value name="onError">true</value>
+    </record>
+    <value name="uniqueId">p67ThMk2jEGek+QrjIoGjFCwxP0=</value>
+    <value name="executeUser">Administrator</value>
+    <value name="maxConsumers">1</value>
+    <value name="minConsumers">1</value>
+    <value name="consumerExpansionDelay">60000</value>
+    <value name="consumerExpansionDelayUnit">MILLISECONDS</value>
+    <value name="consumerCleanupDelay">120000</value>
+    <value name="consumerCleanupDelayUnit">MILLISECONDS</value>
+    <null name="clientId"/>
+    <value name="commitMode">CLIENT_ASYNC</value>
+    <value name="useParallelStreams">false</value>
+    <value name="onDisconnect">ROLLBACK</value>
+    <value name="pollingInterval">5000</value>
+    <value name="pollingIntervalUnit">MILLISECONDS</value>
+    <number name="pollingRequestSize" type="Integer">100</number>
+    <value name="aliasName">WxIBMEventStreamsDemo_IBMEventStream_SaaS</value>
+    <Boolean name="enabled">false</Boolean>
+    <value name="transientFailureAction">NONE</value>
+    <value name="failureAction">NONE</value>
+    <null name="resourceMonitorSvc"/>
+    <array name="source" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="label">stream</value>
+        <value name="referenceId">Temperature</value>
+      </record>
+    </array>
+    <record name="window" javaclass="com.wm.util.Values">
+      <value name="type">TIME_BASED</value>
+      <record name="parameters" javaclass="com.wm.util.Values">
+        <array name="nameValue" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="name">windowSize</value>
+            <value name="value">20</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="name">windowSizeUnit</value>
+            <value name="value">SECONDS</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="name">gracePeriod</value>
+            <value name="value">5</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="name">gracePeriodUnit</value>
+            <value name="value">SECONDS</value>
+          </record>
+        </array>
+      </record>
+    </record>
+    <array name="process" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="processId">stream</value>
+        <array name="intermediate" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="type">FILTER</value>
+            <record name="parameters" javaclass="com.wm.util.Values">
+              <array name="nameValue" type="record" depth="1">
+                <record javaclass="com.wm.util.Values">
+                  <value name="name">filterExpression</value>
+                  <value name="value">%stream/value/temperature% &gt; 10.0</value>
+                </record>
+              </array>
+            </record>
+          </record>
+        </array>
+        <array name="terminal" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="type">CALCULATE</value>
+            <record name="parameters" javaclass="com.wm.util.Values">
+              <array name="nameValue" type="record" depth="1">
+                <record javaclass="com.wm.util.Values">
+                  <value name="name">inputElementNames</value>
+                  <value name="value">stream/value/temperature</value>
+                </record>
+                <record javaclass="com.wm.util.Values">
+                  <value name="name">functions</value>
+                  <value name="value">average,count,max,min</value>
+                </record>
+                <record javaclass="com.wm.util.Values">
+                  <value name="name">groupByField</value>
+                  <value name="value">/stream/value/deviceId</value>
+                </record>
+              </array>
+            </record>
+          </record>
+        </array>
+      </record>
+    </array>
+    <record name="target" javaclass="com.wm.util.Values">
+      <value name="type">INVOKE_SERVICE</value>
+      <record name="parameters" javaclass="com.wm.util.Values">
+        <value name="serviceName">wx.eventstreams.consumer.consumeTemperature_:stream_target</value>
+        <array name="nameValue" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="name">serviceName</value>
+            <value name="value">wx.eventstreams.consumer.consumeTemperature_:stream_target</value>
+          </record>
+        </array>
+      </record>
+    </record>
+  </record>
+</Values>

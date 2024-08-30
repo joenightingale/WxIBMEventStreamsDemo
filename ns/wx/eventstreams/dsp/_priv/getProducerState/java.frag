@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">getProducerState</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsKSURhdGFV
+dGlsLnB1dChwaXBlbGluZUN1cnNvciwgIm5leHRTZXF1ZW5jZSIsICIiICsgX25leHRTZXF1ZW5j
+ZSk7CklEYXRhVXRpbC5wdXQocGlwZWxpbmVDdXJzb3IsICJyZXF1ZXN0VG9TdG9wIiwgX3JlcXVl
+c3RUb1N0b3ApOwoKSURhdGFVdGlsLnB1dChwaXBlbGluZUN1cnNvciwgIm1pblRlbXAiLCAiIiAr
+IF9taW5UZW1wKTsKSURhdGFVdGlsLnB1dChwaXBlbGluZUN1cnNvciwgIm1heFRlbXAiLCAiIiAr
+IF9tYXhUZW1wKTsKSURhdGFVdGlsLnB1dChwaXBlbGluZUN1cnNvciwgIm51bURldmljZXMiLCAi
+IiArIF9udW1EZXZpY2VzKTsKSURhdGFVdGlsLnB1dChwaXBlbGluZUN1cnNvciwgInByb2R1Y2Vy
+Q291bnQiLCAiIiArIF9wcm9kdWNlckNvdW50KTsKSURhdGFVdGlsLnB1dChwaXBlbGluZUN1cnNv
+ciwgInJ1blN0YXRlIiwgX3J1blN0YXRlICE9IG51bGwgPyBfcnVuU3RhdGUgOiAic3RvcHBlZCIp
+OwoKSURhdGFVdGlsLnB1dChwaXBlbGluZUN1cnNvciwgInByb2R1Y2VkIiwgX3Byb2R1Y2VkKTsK
+CnBpcGVsaW5lQ3Vyc29yLmRlc3Ryb3koKTs=</value>
+</Values>

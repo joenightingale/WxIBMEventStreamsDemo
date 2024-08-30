@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="node_type">webMethods/WebSocket</value>
+  <value name="node_subtype">unknown</value>
+  <value name="node_nsName">wx.eventstreams.consumer:wsTemperatureProvider</value>
+  <value name="node_pkg">WxIBMEventStreamsDemo</value>
+  <value name="is_public">false</value>
+  <value name="uri">/events/temperature</value>
+  <value name="behaviour">Server</value>
+  <record name="callback" javaclass="com.wm.util.Values">
+    <value name="onConnect">wx.eventstreams.consumer.wsTemperatureProvider:onConnect</value>
+    <value name="onBinary">wx.eventstreams.consumer.wsTemperatureProvider:onBinary</value>
+    <value name="onText">wx.eventstreams.consumer.wsTemperatureProvider:onText</value>
+    <value name="onClose">wx.eventstreams.consumer.wsTemperatureProvider:onClose</value>
+    <value name="onError">wx.eventstreams.consumer.wsTemperatureProvider:onError</value>
+  </record>
+</Values>
